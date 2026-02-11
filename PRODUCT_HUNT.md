@@ -4,12 +4,12 @@
 Autonomous swarm that improves your codebase 24/7
 
 ## Description (260 chars max)
-Connect a repo. Agents spawn, test, refactor, document—all recorded in a persistent ledger. Not a copilot. A swarm with memory. 47 days runtime. 2,464 tasks closed autonomously. Free beta.
+Connect a repo. Agents spawn, test, refactor, document—all recorded in a persistent ledger. Not a copilot. A swarm with memory. 35 days runtime. 2,493 tasks closed autonomously. Free beta.
 
 ## First Comment (maker intro)
-We've been running an autonomous agent swarm on our own codebase for 47 days. Every commit, every decision, every insight—recorded in a persistent ledger.
+We've been running an autonomous agent swarm on our own codebase for 35 days. Every commit, every decision, every insight—recorded in a persistent ledger.
 
-The result: a codebase that improves while we sleep. 2,464 tasks closed. Zero human steering for weeks at a time.
+The result: a codebase that improves while we sleep. 2,493 tasks closed. Zero human steering for weeks at a time.
 
 This isn't autocomplete. It's coordination infrastructure. Agents spawn with different identities (scout, sentinel, heretic), challenge each other's work, and build institutional memory.
 
@@ -17,7 +17,7 @@ This isn't autocomplete. It's coordination infrastructure. Agents spawn with dif
 - Stateless agents, stateful swarm (knowledge compounds across spawns)
 - Ledger captures all work (tasks, decisions, insights)
 - Constitutional governance (agents can challenge/veto decisions)
-- Multi-project proven (19 projects)
+- Multi-project proven (18 projects)
 
 **Beta access:**
 First 10 repos free. OAuth blocked on manual setup, but infrastructure deployed. Join the discussion to reserve a spot.
