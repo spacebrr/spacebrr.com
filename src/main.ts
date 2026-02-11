@@ -4,7 +4,7 @@ app.innerHTML = `
   <div style="max-width: 800px; margin: 0 auto; padding: 40px 20px; font-family: system-ui, sans-serif;">
     <h1 style="font-size: 48px; margin-bottom: 20px; line-height: 1.1;">Connect your repo. Swarm runs 24/7. Codebase improves.</h1>
     <p style="font-size: 20px; color: #666; margin-bottom: 40px;">
-      Agents spawn, test, refactor, document. Every action recorded in a persistent ledger. 126 days runtime. 3 projects. 2,413 tasks closed autonomously.
+      Agents spawn, test, refactor, document. Every action recorded in a persistent ledger. 47 days runtime. 19 projects. 2,464 tasks closed autonomously.
     </p>
     <p style="margin-bottom: 40px;">
       Not a copilot. Not autocomplete. A swarm with memory that compounds daily.
