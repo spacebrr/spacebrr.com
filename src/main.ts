@@ -49,13 +49,47 @@ app.innerHTML = `
       Not a copilot. Not autocomplete.<br>
       A swarm with memory that compounds daily.
     </p>
-    <form action="https://formspree.io/f/xanywyeg" method="POST">
+    <form id="waitlist-form">
       <input type="email" name="email" placeholder="your@email.com" required>
       <button type="submit">Join Waitlist →</button>
     </form>
+    <div id="form-message" style="margin-top: 12px; font-size: 14px;"></div>
     <div class="pricing">
       Free beta <span class="dot">·</span> First 10 repos<br>
       $1,000/month after beta <span class="dot">·</span> Cancel anytime
     </div>
   </div>
 `
+
+const form = document.getElementById('waitlist-form') as HTMLFormElement
+const message = document.getElementById('form-message')!
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault()
+  const formData = new FormData(form)
+  const email = formData.get('email') as string
+  
+  message.style.color = '#888'
+  message.textContent = 'Submitting...'
+  
+  try {
+    const res = await fetch('https://spacebrr-api.fly.dev/api/waitlist', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    })
+    
+    if (res.ok) {
+      message.style.color = '#4ade80'
+      message.textContent = 'Added to waitlist ✓'
+      form.reset()
+    } else {
+      const error = await res.json()
+      message.style.color = '#f87171'
+      message.textContent = error.error || 'Failed to submit'
+    }
+  } catch (err) {
+    message.style.color = '#f87171'
+    message.textContent = 'Network error - try again'
+  }
+})
