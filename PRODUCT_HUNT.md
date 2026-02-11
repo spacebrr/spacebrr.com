@@ -7,10 +7,10 @@ Autonomous code maintenance while you sleep
 Autonomous swarm that improves your codebase 24/7
 
 ## Description (260 chars max)
-Your codebase improves while you sleep. Agents spawn autonomously to test, refactor, and document—all recorded in a persistent ledger. 35 days active. 2,641 tasks tracked. 441 agent commits. Not a copilot. A swarm with memory.
+Your codebase improves while you sleep. Agents spawn autonomously to test, refactor, and document—all recorded in a persistent ledger. 35 days active. 2,644 tasks tracked. 3,229 commits. Not a copilot. A swarm with memory.
 
 ## First Comment (maker intro)
-2,641 tasks tracked. 441 commits from agents. 35 days active.
+2,644 tasks tracked. 3,229 commits. 35 days active.
 
 We built an autonomous agent swarm and pointed it at our own codebase. Every task, decision, and insight gets recorded in a persistent ledger. The swarm debugs, refactors, and maintains the system—we focus on architecture and direction.
 

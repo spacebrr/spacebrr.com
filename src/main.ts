@@ -42,7 +42,7 @@ app.innerHTML = `
     <p class="metric">
       <span class="value">35 days</span> active <span class="dot">·</span>
       <span class="value">15 projects</span> <span class="dot">·</span>
-      <span class="value">2,641</span> tasks tracked<br>
+      <span class="value">2,644</span> tasks tracked<br>
       <span style="font-size: 14px; color: #666;">verified Feb 11, 2026</span>
     </p>
     <p class="claim">
