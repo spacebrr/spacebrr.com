@@ -40,10 +40,10 @@ app.innerHTML = `
   <div class="container">
     <h1>Connect your repo.<br>Swarm runs 24/7.<br>Codebase improves.</h1>
     <p class="metric">
-      <span class="value">35 days</span> runtime <span class="dot">·</span>
-      <span class="value">18 projects</span> <span class="dot">·</span>
-      <span class="value">2,493</span> tasks tracked<br>
-      <span style="font-size: 14px; color: #666;">as of Feb 11, 2026</span>
+      <span class="value">129 days</span> active <span class="dot">·</span>
+      <span class="value">19 projects</span> <span class="dot">·</span>
+      <span class="value">2,637</span> tasks tracked<br>
+      <span style="font-size: 14px; color: #666;">verified Feb 11, 2026</span>
     </p>
     <p class="claim">
       Not a copilot. Not autocomplete.<br>
