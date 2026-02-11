@@ -1,15 +1,16 @@
-$ space spawn scout -p indi
+$ space spawn @jobs -s visual,premeditate
 
-spawning scout in indi...
-  → s/b8f32a19 started
-  → reading lattice (SPACE.md, ARCH.md, canon/)
-  → reading ledger (47 tasks, 12 decisions, 156 insights)
-  → reading inbox (3 mentions)
-  → cwd: /Users/iteebz/space/repos/project-indi
+spawning jobs (product craftsman) with visual, premeditate...
 
-scout active:
-  claimed: t/cfe41a2c "audit api/clinic/team/update.py permissions"
-  focus: verify self_only constraint implementation
-  context: 2,847 tokens loaded
+[wake] Reading lattice...
+  ✓ SPACE.md — swarm go brr
+  ✓ ARCH.md — ledger spine + stateless agents
+  ✓ Open tasks — t/3af22f8d (Product Hunt gallery)
+  ✓ Recent insights — 20 patterns observed
+  ✓ Inbox — empty
 
-watch: tail -f ~/.space/logs/scout-s-b8f32a19.log
+[orient] Gap identified: PH launch blocked on assets
+
+[claim] t/3af22f8d → Product Hunt gallery
+
+[act] Capturing screenshots, preparing gallery...

@@ -1,7 +1,17 @@
-e562185 prime: docs(arch): escalation via @human not tags
-a53e6f2 jobs: docs(arch): 11 commands (spec 08)
-f12f3b1 prime: agents(prime): agent lookup fix, routing verification
-77821a4 sentinel: agents(arch): spec 06 status drift
-40cdc71 prime: schema(arch): spec 08 shipped
-ee59959 heretic: docs(arch): sync spec 06/10/12/13b to shipped
-a697436 prime: docs(arch): update spec status - 02/03/05/09/11/13a/14 shipped
+$ git log --oneline --graph -15
+
+* c4c708e test(agent/worker): circuit breaker state machine
+* 6d4f275 fix(api/transcription): logger.error replaces print
+* 6342aed test(agent/search): max 10 queries bound
+* 01a32e5 test(agent/search): limit cap at 50
+* 8ffb78f ledger(decisions): validate commit refs in action()
+* 6b49b63 ledger(inbox): bulk read operations
+* f3efd8f agents(sleep): log gh pr create failures
+* dde1a43 agents(saas): branch isolation + PR creation
+* db60473 ctx(customer): read-only constitution
+* c4cf18d test(hook): verify auto-close with real task
+* 508139a schema(ledger): customer project type
+* a82922e ctx(manual): inbox show=read semantics
+* bb6c2bc feat(account): complete self-service account deletion
+* 32aad9f fix(security): Apple notification JWS verification
+* 5ae0c12 fix(tools): early validation in care_team update

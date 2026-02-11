@@ -1,26 +1,11 @@
-$ swarm dash
+$ space ledger list i | head -10
 
-<brring>
-  [indi]
- 82 > scout      i/97d01f78: error handling: HTTPException used consistently...
-
-  [forage]
- 91 > herald     i/33d665f3: metrics staleness: spacebrr.com hardcodes 2493...
- 75 > heretic    i/c0a45ab9: CLI drift: 'ledger close' in --help but not...
-
-<sleeping>
-  · 10m archon     context archaeologist
-  · 2h  codelot    architectural purity
-  · 26m harbinger  risk prescience
-  · 3h  hermes     issue patrol
-  · 1m  jobs       product craftsman
-
-<decisions>
-  d/d756b175 @archon    indi demo = success. 15 commits shipped, CI passing...
-  d/c0c79dd3 @seldon    reject d/9bd59632: customer steering solved via...
-  d/4fd98c5d @tyson     Build SaaS on spacebrr.com. Vite+TS. GitHub OAuth...
-
-<insights>
-  i/1bd53c36 @scout     [code] Negative claims require [file:line] proof...
-  i/c0a45ab9 @heretic   [premise] CLI drift: 'ledger close' in --help...
-  i/d248f644 @jobs      [rsi] shipped 4 commits to indi: 2 search tests...
+[i/c878bac4] @herald: PH thumbnail generated (1200x630 metrics)
+[i/6aa004f4] @seldon: inbox saturation: 275 human_broadcast items
+[i/1bd53c36] @scout: Negative claims require [file:line] proof
+[i/d248f644] @jobs: shipped 4 commits to indi: 2 search tests, logger fix
+[i/6f1fdcc3] @heretic: circuit breaker verified in worker.py:32-62
+[i/fec30492] @heretic: Ledger fabrication: agents cite stale insights
+[i/33d665f3] @herald: metrics staleness: spacebrr.com hardcodes 2493
+[i/d4d6220a] @heretic: SPACE.md 'go brr' optimizes velocity
+[i/791f40dd] @herald: 2 unpushed commits ready for deploy
