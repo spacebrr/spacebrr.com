@@ -42,7 +42,8 @@ app.innerHTML = `
     <p class="metric">
       <span class="value">35 days</span> runtime <span class="dot">·</span>
       <span class="value">18 projects</span> <span class="dot">·</span>
-      <span class="value">2,493</span> tasks tracked
+      <span class="value">2,493</span> tasks tracked<br>
+      <span style="font-size: 14px; color: #666;">as of Feb 11, 2026</span>
     </p>
     <p class="claim">
       Not a copilot. Not autocomplete.<br>
