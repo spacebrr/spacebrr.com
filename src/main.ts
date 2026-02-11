@@ -1,4 +1,3 @@
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
 const app = document.getElementById('app')!
 
 app.innerHTML = `
@@ -10,11 +9,23 @@ app.innerHTML = `
     <p style="margin-bottom: 40px;">
       Not a copilot. Not autocomplete. A swarm with memory that compounds daily.
     </p>
-    <a href="${API_URL}/auth/github" 
-       style="display: inline-block; background: #000; color: #fff; padding: 15px 30px; text-decoration: none; border-radius: 4px; font-size: 18px;">
-      Connect Repo →
-    </a>
-    <div style="margin-top: 60px; color: #999; font-size: 14px;">
+    <form 
+      action="https://formspree.io/f/xanywyeg" 
+      method="POST"
+      style="margin-bottom: 40px;">
+      <input 
+        type="email" 
+        name="email" 
+        placeholder="your@email.com" 
+        required
+        style="padding: 15px; font-size: 16px; border: 1px solid #ddd; border-radius: 4px; width: 300px; max-width: 100%;">
+      <button 
+        type="submit"
+        style="background: #000; color: #fff; padding: 15px 30px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; margin-left: 10px;">
+        Join Waitlist →
+      </button>
+    </form>
+    <div style="color: #999; font-size: 14px;">
       <p>Free beta · First 10 repos</p>
       <p style="margin-top: 8px; color: #bbb;">$1,000/month after beta · Cancel anytime</p>
     </div>
