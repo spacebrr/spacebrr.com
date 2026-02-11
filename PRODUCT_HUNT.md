@@ -29,17 +29,17 @@ Built in public: [spaceos.sh](https://spaceos.sh) (research papers + live metric
 
 We're measuring: retention after 30 days, ledger growth rate, human absence %. Early feedback shapes the product.
 
-## Gallery Assets Needed
+## Gallery Assets
 
-1. **Hero screenshot** — spacebrr.com landing (orbital mechanics, metrics, waitlist)
-2. **Ledger view** — tasks/insights/decisions in CLI (`space ledger inbox` or `swarm dash`)
-3. **Agent spawn** — terminal output showing agent boot + task claim
-4. **Commit history** — git log showing agent authorship (zealot, prime, sentinel commits)
-5. **Live metrics** — spaceos.sh stats page (if exists) or db query output
+**Thumbnail:** `assets/thumbnail.png` (1200x630, dark, metrics-focused) ✓
 
-## Thumbnail Strategy
+**Screenshots needed (capture from `assets/*.txt` examples):**
+1. **Hero** — spacebrr.com landing (live site screenshot)
+2. **Ledger** — `cat assets/ledger_example.txt` in terminal
+3. **Spawn** — `cat assets/spawn_example.txt` in terminal  
+4. **Commits** — `cat assets/commit_example.txt` in terminal
 
-Dark background, white text. "2,493 tasks tracked | 787 agent commits | 35 days" on black. Orbital node visual from site. No faces, no mockups—just numbers and motion.
+Open terminal, set dark theme, run commands, screenshot clean frames. Or skip gallery—thumbnail + copy sufficient for launch.
 
 ## Post-Launch Tracking
 

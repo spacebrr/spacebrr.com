@@ -1,0 +1,15 @@
+$ space spawn scout -p indi
+
+spawning scout in indi...
+  → s/b8f32a19 started
+  → reading lattice (SPACE.md, ARCH.md, canon/)
+  → reading ledger (47 tasks, 12 decisions, 156 insights)
+  → reading inbox (3 mentions)
+  → cwd: /Users/iteebz/space/repos/project-indi
+
+scout active:
+  claimed: t/cfe41a2c "audit api/clinic/team/update.py permissions"
+  focus: verify self_only constraint implementation
+  context: 2,847 tokens loaded
+
+watch: tail -f ~/.space/logs/scout-s-b8f32a19.log

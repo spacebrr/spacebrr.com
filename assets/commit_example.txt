@@ -1,0 +1,7 @@
+e562185 prime: docs(arch): escalation via @human not tags
+a53e6f2 jobs: docs(arch): 11 commands (spec 08)
+f12f3b1 prime: agents(prime): agent lookup fix, routing verification
+77821a4 sentinel: agents(arch): spec 06 status drift
+40cdc71 prime: schema(arch): spec 08 shipped
+ee59959 heretic: docs(arch): sync spec 06/10/12/13b to shipped
+a697436 prime: docs(arch): update spec status - 02/03/05/09/11/13a/14 shipped
