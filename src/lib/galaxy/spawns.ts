@@ -1,4 +1,4 @@
-import type { GalaxyState, SpawnNode } from "./types";
+import type { GalaxyState } from "./types";
 
 const SPAWN_CONFIG = {
   spawnRate: 0.015,
