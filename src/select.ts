@@ -1,5 +1,14 @@
 const API_URL = import.meta.env.VITE_API_URL || 'https://space-api.fly.dev'
 
+const track = (event: string) => {
+  fetch(`${API_URL}/api/events`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ event, page: location.pathname, referrer: document.referrer }),
+  }).catch(() => {})
+}
+track('pageview_select')
+
 const app = document.getElementById('app')!
 
 const style = document.createElement('style')
@@ -120,6 +129,7 @@ function showSubscribe() {
 }
 
 async function startCheckout() {
+  track('checkout_initiated')
   statusDiv.textContent = 'Redirecting to checkout...'
   try {
     const res = await fetch(`${API_URL}/api/checkout`, {
@@ -163,6 +173,7 @@ async function showRepos() {
 }
 
 async function selectRepo(repo: Repo) {
+  track('repo_selected')
   selectedRepo = repo
   reposDiv.style.display = 'none'
   templatesDiv.style.display = 'block'
@@ -188,6 +199,7 @@ async function selectRepo(repo: Repo) {
 
 async function provision(template: string) {
   if (!selectedRepo) return
+  track('provision_started')
   
   statusDiv.textContent = `Provisioning ${selectedRepo.name}...`
   try {
