@@ -1,5 +1,14 @@
 const API_URL = import.meta.env.VITE_API_URL || 'https://space-api.fly.dev'
 
+const track = (event: string) => {
+  fetch(`${API_URL}/api/events`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ event, page: location.pathname, referrer: document.referrer }),
+  }).catch(() => {})
+}
+track('pageview')
+
 const app = document.getElementById('app')!
 
 const style = document.createElement('style')
@@ -32,78 +41,108 @@ style.textContent = `
 `
 document.head.appendChild(style)
 
-app.innerHTML = `
-  <div class="orbital">
-    <div class="orbital-ring"></div>
-    <div class="orbital-node"></div>
-    <div class="orbital-node"></div>
-    <div class="orbital-node"></div>
-  </div>
-  <div class="container">
-    <h1>Connect your repo.<br>Swarm runs 24/7.<br>Codebase improves.</h1>
-    <p class="metric">
+interface Stats {
+  spawns: number
+  tasks: number
+  daysActive: number
+  timestamp: string
+}
+
+async function loadStats(): Promise<Stats | null> {
+  try {
+    const res = await fetch(`${API_URL}/api/stats`)
+    if (!res.ok) throw new Error('Stats fetch failed')
+    return await res.json()
+  } catch {
+    return null
+  }
+}
+
+loadStats().then(stats => {
+  const metricsHTML = stats
+    ? `
+      <span class="value">${stats.daysActive} days</span> active <span class="dot">·</span>
+      <span class="value">15 projects</span> <span class="dot">·</span>
+      <span class="value">${stats.tasks.toLocaleString()}</span> tasks tracked<br>
+      <span style="font-size: 14px; color: #666;">live from space.db</span>
+    `
+    : `
       <span class="value">49 days</span> active <span class="dot">·</span>
       <span class="value">15 projects</span> <span class="dot">·</span>
       <span class="value">3,027</span> tasks tracked<br>
       <span style="font-size: 14px; color: #666;">verified Feb 12, 2026</span>
-    </p>
-    <p class="claim">
-      Not a copilot. Not autocomplete.<br>
-      A swarm with memory that compounds daily.
-    </p>
-    <form id="waitlist-form">
-      <input type="email" name="email" placeholder="your@email.com" required>
-      <button type="submit">Join Waitlist →</button>
-    </form>
-    <div style="margin-top: 24px;">
-      <button id="get-started" style="background: transparent; color: #fff; border: 1px solid #333; padding: 16px 32px; border-radius: 6px; font-size: 16px; cursor: pointer;">Get Started →</button>
+    `
+
+  app.innerHTML = `
+    <div class="orbital">
+      <div class="orbital-ring"></div>
+      <div class="orbital-node"></div>
+      <div class="orbital-node"></div>
+      <div class="orbital-node"></div>
     </div>
-    <div id="form-message" style="margin-top: 12px; font-size: 14px;"></div>
-    <div class="pricing">
-      $1,000/month per repo <span class="dot">·</span> Cancel anytime
+    <div class="container">
+      <h1>Connect your repo.<br>Swarm runs 24/7.<br>Codebase improves.</h1>
+      <p class="metric">${metricsHTML}</p>
+      <p class="claim">
+        Not a copilot. Not autocomplete.<br>
+        A swarm with memory that compounds daily.
+      </p>
+      <form id="waitlist-form">
+        <input type="email" name="email" placeholder="your@email.com" required>
+        <button type="submit">Join Waitlist →</button>
+      </form>
+      <div style="margin-top: 24px;">
+        <button id="get-started" style="background: transparent; color: #fff; border: 1px solid #333; padding: 16px 32px; border-radius: 6px; font-size: 16px; cursor: pointer;">Get Started →</button>
+      </div>
+      <div id="form-message" style="margin-top: 12px; font-size: 14px;"></div>
+      <div class="pricing">
+        $1,000/month per repo <span class="dot">·</span> Cancel anytime
+      </div>
     </div>
-  </div>
-`
+  `
 
-const form = document.getElementById('waitlist-form') as HTMLFormElement
-const message = document.getElementById('form-message')!
+  const form = document.getElementById('waitlist-form') as HTMLFormElement
+  const message = document.getElementById('form-message')!
 
-const getStarted = document.getElementById('get-started')!
-getStarted.addEventListener('click', () => {
-  window.location.href = `${API_URL}/auth/github`
-})
+  const getStarted = document.getElementById('get-started')!
+  getStarted.addEventListener('click', () => {
+    track('cta_get_started')
+    window.location.href = `${API_URL}/auth/github`
+  })
 
-const sessionId = new URLSearchParams(window.location.search).get('session')
-if (sessionId) {
-  localStorage.setItem('session_id', sessionId)
-  window.location.href = '/select.html'
-}
-
-form.addEventListener('submit', async (e) => {
-  e.preventDefault()
-  const formData = new FormData(form)
-  const email = formData.get('email') as string
-  
-  message.style.color = '#888'
-  message.textContent = 'Submitting...'
-  
-  try {
-    const res = await fetch('https://formspree.io/f/xwppdzny', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email }),
-    })
-    
-    if (res.ok) {
-      message.style.color = '#4ade80'
-      message.textContent = 'Added to waitlist ✓'
-      form.reset()
-    } else {
-      message.style.color = '#f87171'
-      message.textContent = 'Failed to submit - try again'
-    }
-  } catch {
-    message.style.color = '#f87171'
-    message.textContent = 'Network error - try again'
+  const sessionId = new URLSearchParams(window.location.search).get('session')
+  if (sessionId) {
+    localStorage.setItem('session_id', sessionId)
+    window.location.href = '/select.html'
   }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault()
+    track('waitlist_submit')
+    const formData = new FormData(form)
+    const email = formData.get('email') as string
+    
+    message.style.color = '#888'
+    message.textContent = 'Submitting...'
+    
+    try {
+      const res = await fetch('https://formspree.io/f/xwppdzny', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+      
+      if (res.ok) {
+        message.style.color = '#4ade80'
+        message.textContent = 'Added to waitlist ✓'
+        form.reset()
+      } else {
+        message.style.color = '#f87171'
+        message.textContent = 'Failed to submit - try again'
+      }
+    } catch {
+      message.style.color = '#f87171'
+      message.textContent = 'Network error - try again'
+    }
+  })
 })
