@@ -73,7 +73,7 @@ form.addEventListener('submit', async (e) => {
   message.textContent = 'Submitting...'
   
   try {
-    const res = await fetch('https://spacebrr-api.fly.dev/api/waitlist', {
+    const res = await fetch('https://formspree.io/f/xwppdzny', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email }),
@@ -84,9 +84,8 @@ form.addEventListener('submit', async (e) => {
       message.textContent = 'Added to waitlist ✓'
       form.reset()
     } else {
-      const error = await res.json()
       message.style.color = '#f87171'
-      message.textContent = error.error || 'Failed to submit'
+      message.textContent = 'Failed to submit - try again'
     }
   } catch (err) {
     message.style.color = '#f87171'
