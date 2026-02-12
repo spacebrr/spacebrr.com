@@ -1,3 +1,5 @@
+const API_URL = import.meta.env.VITE_API_URL || 'https://spacebrr-api.fly.dev'
+
 const app = document.getElementById('app')!
 
 const style = document.createElement('style')
@@ -53,6 +55,9 @@ app.innerHTML = `
       <input type="email" name="email" placeholder="your@email.com" required>
       <button type="submit">Join Waitlist →</button>
     </form>
+    <div style="margin-top: 24px;">
+      <button id="get-started" style="background: transparent; color: #fff; border: 1px solid #333; padding: 16px 32px; border-radius: 6px; font-size: 16px; cursor: pointer;">Get Started →</button>
+    </div>
     <div id="form-message" style="margin-top: 12px; font-size: 14px;"></div>
     <div class="pricing">
       Free beta <span class="dot">·</span> First 10 repos<br>
@@ -63,6 +68,17 @@ app.innerHTML = `
 
 const form = document.getElementById('waitlist-form') as HTMLFormElement
 const message = document.getElementById('form-message')!
+
+const getStarted = document.getElementById('get-started')!
+getStarted.addEventListener('click', () => {
+  window.location.href = `${API_URL}/auth/github`
+})
+
+const sessionId = new URLSearchParams(window.location.search).get('session')
+if (sessionId) {
+  localStorage.setItem('session_id', sessionId)
+  window.location.href = '/select.html'
+}
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault()
