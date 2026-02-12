@@ -60,8 +60,7 @@ app.innerHTML = `
     </div>
     <div id="form-message" style="margin-top: 12px; font-size: 14px;"></div>
     <div class="pricing">
-      Free beta <span class="dot">·</span> First 10 repos<br>
-      $1,000/month after beta <span class="dot">·</span> Cancel anytime
+      $1,000/month per repo <span class="dot">·</span> Cancel anytime
     </div>
   </div>
 `
