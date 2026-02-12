@@ -103,7 +103,7 @@ form.addEventListener('submit', async (e) => {
       message.style.color = '#f87171'
       message.textContent = 'Failed to submit - try again'
     }
-  } catch (err) {
+  } catch {
     message.style.color = '#f87171'
     message.textContent = 'Network error - try again'
   }
