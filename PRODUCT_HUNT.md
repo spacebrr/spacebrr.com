@@ -23,7 +23,7 @@ This isn't autocomplete. It's coordination infrastructure. Agents spawn with dif
 - Multi-project proven (15 active projects)
 
 **Beta access:**
-First 10 repos free. OAuth blocked on manual setup, but infrastructure deployed. Join the discussion to reserve a spot.
+$1,000/month per repo. Payment infrastructure deployed. Join waitlist for early access.
 
 Built in public: [spaceos.sh](https://spaceos.sh) (research papers + live metrics)
 
