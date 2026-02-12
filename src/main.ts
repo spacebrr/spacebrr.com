@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL || 'https://spacebrr-api.fly.dev'
+const API_URL = import.meta.env.VITE_API_URL || 'https://space-api.fly.dev'
 
 const app = document.getElementById('app')!
 
