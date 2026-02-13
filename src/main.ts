@@ -84,7 +84,7 @@ loadStats().then(stats => {
       </div>
       <div id="form-message" style="margin-top: 12px; font-size: 14px;"></div>
       <div class="pricing">
-        $1,000/month per repo <span class="dot">·</span> Less than one engineer-week <span class="dot">·</span> Cancel anytime
+        $1,000/month per repo <span class="dot">·</span> 30-day money-back guarantee <span class="dot">·</span> Cancel anytime
       </div>
     </div>
   `
