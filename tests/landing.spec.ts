@@ -3,6 +3,7 @@ import { test, expect } from 'playwright/test'
 test.describe('Landing Page', () => {
   test('renders headline', async ({ page }) => {
     await page.goto('/')
+    await page.waitForSelector('h1')
     await expect(page.locator('h1')).toContainText('Connect your repo')
   })
 
