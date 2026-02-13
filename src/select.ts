@@ -103,6 +103,7 @@ async function checkSubscription() {
     const res = await fetch(`${API_URL}/api/subscription`, {
       headers: { Authorization: `Bearer ${sessionId}` }
     })
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
     const data = await res.json()
     
     if (data.status === 'active') {
@@ -136,6 +137,7 @@ async function startCheckout() {
       method: 'POST',
       headers: { Authorization: `Bearer ${sessionId}` }
     })
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
     const data = await res.json()
     if (data.url) {
       window.location.href = data.url
@@ -155,6 +157,7 @@ async function showRepos() {
     const res = await fetch(`${API_URL}/api/repos`, {
       headers: { Authorization: `Bearer ${sessionId}` }
     })
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
     const repos: Repo[] = await res.json()
     
     repos.forEach(repo => {
@@ -183,6 +186,7 @@ async function selectRepo(repo: Repo) {
     const res = await fetch(`${API_URL}/api/templates`, {
       headers: { Authorization: `Bearer ${sessionId}` }
     })
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
     const templates: Template[] = await res.json()
     
     templates.forEach(template => {
@@ -221,6 +225,7 @@ async function provision(template: string) {
         template: template
       })
     })
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
     const data = await res.json()
     if (data.error) {
       statusDiv.textContent = `Error: ${data.error}`
