@@ -197,11 +197,16 @@ async function selectRepo(repo: Repo) {
   }
 }
 
+let provisioning = false
+
 async function provision(template: string) {
-  if (!selectedRepo) return
+  if (!selectedRepo || provisioning) return
+  provisioning = true
   track('provision_started')
   
   statusDiv.textContent = `Provisioning ${selectedRepo.name}...`
+  const templateDivs = document.querySelectorAll<HTMLDivElement>('.repo')
+  templateDivs.forEach(div => div.style.pointerEvents = 'none')
   try {
     const res = await fetch(`${API_URL}/api/provision`, {
       method: 'POST',
@@ -219,11 +224,17 @@ async function provision(template: string) {
     const data = await res.json()
     if (data.error) {
       statusDiv.textContent = `Error: ${data.error}`
+      provisioning = false
+      const templateDivs = document.querySelectorAll<HTMLDivElement>('.repo')
+      templateDivs.forEach(div => div.style.pointerEvents = 'auto')
     } else {
       window.location.href = `/success.html?project_id=${data.project_id}&repo=${encodeURIComponent(selectedRepo.full_name)}`
     }
   } catch (err) {
     statusDiv.textContent = `Error: ${(err as Error).message}`
+    provisioning = false
+    const templateDivs = document.querySelectorAll<HTMLDivElement>('.repo')
+    templateDivs.forEach(div => div.style.pointerEvents = 'auto')
   }
 }
 
