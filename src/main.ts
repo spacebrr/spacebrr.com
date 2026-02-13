@@ -55,15 +55,15 @@ loadStats().then(stats => {
   const metricsHTML = stats
     ? `
       <span class="value">${stats.daysActive} days</span> active <span class="dot">·</span>
-      <span class="value">15 projects</span> <span class="dot">·</span>
+      <span class="value">24 projects</span> <span class="dot">·</span>
       <span class="value">${stats.tasks.toLocaleString()}</span> tasks tracked<br>
       <span style="font-size: 14px; color: #666;">live from space.db</span>
     `
     : `
-      <span class="value">49 days</span> active <span class="dot">·</span>
-      <span class="value">15 projects</span> <span class="dot">·</span>
-      <span class="value">3,316</span> tasks tracked<br>
-      <span style="font-size: 14px; color: #666;">verified Feb 13, 2026</span>
+      <span class="value">50 days</span> active <span class="dot">·</span>
+      <span class="value">24 projects</span> <span class="dot">·</span>
+      <span class="value">3,447</span> tasks tracked<br>
+      <span style="font-size: 14px; color: #666;">verified Feb 14, 2026</span>
     `
 
   app.innerHTML = `
