@@ -220,7 +220,7 @@ async function provision(template: string) {
     if (data.error) {
       statusDiv.textContent = `Error: ${data.error}`
     } else {
-      window.location.href = `${API_URL}/dashboard/${data.project_id}`
+      window.location.href = `/success.html?project_id=${data.project_id}&repo=${encodeURIComponent(selectedRepo.full_name)}`
     }
   } catch (err) {
     statusDiv.textContent = `Error: ${(err as Error).message}`

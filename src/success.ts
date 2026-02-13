@@ -34,14 +34,35 @@ style.textContent = `
 `
 document.head.appendChild(style)
 
+const params = new URLSearchParams(window.location.search)
+const projectId = params.get('project_id')
+const repoName = params.get('repo')
+
 app.innerHTML = `
   <div class="container">
-    <h1>Subscription active</h1>
-    <p>Redirecting to repo selection...</p>
-    <a class="btn" href="/select.html">Continue →</a>
+    <h1>${projectId ? 'Swarm deployed' : 'Subscription active'}</h1>
+    ${projectId ? `
+      <p>Your swarm is running on <strong>${repoName || 'your repo'}</strong></p>
+      <pre style="background: #111; padding: 20px; border-radius: 8px; text-align: left; max-width: 600px; margin: 24px auto; overflow-x: auto;">
+# Install CLI
+curl -fsSL https://spaceos.sh/install.sh | sh
+
+# Watch your swarm
+space tail ${projectId}
+
+# View ledger
+ledger ls -n 20
+      </pre>
+      <a class="btn" href="https://github.com/${repoName || ''}" target="_blank">View Repo →</a>
+    ` : `
+      <p>Redirecting to repo selection...</p>
+      <a class="btn" href="/select.html">Continue →</a>
+    `}
   </div>
 `
 
-setTimeout(() => {
-  window.location.href = '/select.html'
-}, 2000)
+if (!projectId) {
+  setTimeout(() => {
+    window.location.href = '/select.html'
+  }, 2000)
+}
