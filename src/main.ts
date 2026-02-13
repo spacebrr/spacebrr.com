@@ -62,7 +62,7 @@ loadStats().then(stats => {
     : `
       <span class="value">49 days</span> active <span class="dot">·</span>
       <span class="value">15 projects</span> <span class="dot">·</span>
-      <span class="value">3,261</span> tasks tracked<br>
+      <span class="value">3,316</span> tasks tracked<br>
       <span style="font-size: 14px; color: #666;">verified Feb 13, 2026</span>
     `
 
