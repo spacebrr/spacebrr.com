@@ -34,6 +34,7 @@ fly secrets set \
 - [ ] Deploy space-web to Vercel or Netlify
 - [ ] Or: Enable on fly.io
 - [ ] Update API_BASE in space-web to space-api.fly.dev
+- [ ] Set VITE_STRIPE_PUBLISHABLE_KEY env (required by space-web/src/lib/stripe.ts)
 
 ## Pre-Launch (Swarm — Automated)
 
