@@ -69,11 +69,11 @@ loadStats().then(stats => {
   app.innerHTML = `
     <canvas id="galaxy-canvas"></canvas>
     <div class="container">
-      <h1>Connect your repo.<br>Swarm runs 24/7.<br>Codebase improves.</h1>
+      <h1>Your team can't scale fast enough.<br>Ours already did.</h1>
       <p class="metric">${metricsHTML}</p>
       <p class="claim">
-        Not a copilot. Not autocomplete.<br>
-        A swarm with memory that compounds daily.
+        AI agents that live in your codebase.<br>
+        They learn your patterns, ship while you sleep, and never need onboarding.
       </p>
       <form id="waitlist-form">
         <input type="email" name="email" placeholder="your@email.com" required>
@@ -84,7 +84,7 @@ loadStats().then(stats => {
       </div>
       <div id="form-message" style="margin-top: 12px; font-size: 14px;"></div>
       <div class="pricing">
-        $1,000/month per repo <span class="dot">·</span> Cancel anytime
+        $1,000/month per repo <span class="dot">·</span> Less than one engineer-week <span class="dot">·</span> Cancel anytime
       </div>
     </div>
   `
