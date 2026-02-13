@@ -107,8 +107,16 @@ loadStats().then(stats => {
     window.location.href = `${API_URL}/auth/github`
   })
 
-  const sessionId = new URLSearchParams(window.location.search).get('session')
-  if (sessionId) {
+  const params = new URLSearchParams(window.location.search)
+  const sessionId = params.get('session')
+  const error = params.get('error')
+  
+  if (error) {
+    const message = document.querySelector('.metric') as HTMLElement
+    if (message) {
+      message.innerHTML = `<span style="color: #f44;">OAuth error: ${error}. Please try again.</span>`
+    }
+  } else if (sessionId) {
     localStorage.setItem('session_id', sessionId)
     window.location.href = '/select.html'
   }
