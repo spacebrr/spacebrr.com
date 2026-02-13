@@ -44,24 +44,7 @@ test.describe('Select Page', () => {
     await expect(page.locator('.repo-name')).toContainText('user/test-repo')
   })
 
-  test('test mode bypasses subscription check', async ({ page }) => {
-    await page.addInitScript(() => {
-      localStorage.setItem('session_id', 'test-session')
-    })
-    await page.route('**/api/repos', route => {
-      route.fulfill({
-        status: 200,
-        body: JSON.stringify([
-          { name: 'test-repo', full_name: 'user/test-repo', clone_url: 'https://github.com/user/test-repo.git', description: 'Test repo' }
-        ]),
-      })
-    })
-    await page.goto('/select.html?test=1')
-    await expect(page.locator('#heading')).toContainText('Select a repository')
-    await expect(page.locator('.repo-name')).toContainText('user/test-repo')
-  })
-
-  test('provision flow end-to-end with test mode', async ({ page }) => {
+  test('provision flow end-to-end', async ({ page }) => {
     await page.addInitScript(() => {
       localStorage.setItem('session_id', 'test-session')
     })
@@ -89,7 +72,14 @@ test.describe('Select Page', () => {
       })
     })
     
-    await page.goto('/select.html?test=1')
+    await page.route('**/api/subscription', route => {
+      route.fulfill({
+        status: 200,
+        body: JSON.stringify({ status: 'active' }),
+      })
+    })
+    
+    await page.goto('/select.html')
     await expect(page.locator('#heading')).toContainText('Select a repository')
     
     await page.locator('#repos .repo').first().click()

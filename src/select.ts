@@ -99,14 +99,6 @@ const statusDiv = document.getElementById('status')!
 const heading = document.getElementById('heading')!
 
 async function checkSubscription() {
-  const testMode = new URLSearchParams(window.location.search).get('test') === '1'
-  
-  if (testMode) {
-    console.warn('TEST MODE: subscription check bypassed')
-    showRepos()
-    return
-  }
-  
   try {
     const res = await fetch(`${API_URL}/api/subscription`, {
       headers: { Authorization: `Bearer ${sessionId}` }
