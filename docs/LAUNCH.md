@@ -30,10 +30,8 @@ fly secrets set \
 - [ ] Branch: main, /
 - [ ] Verify spacebrr.com is live
 
-### Space-web Deploy (app.spacebrr.com)
-- [ ] Deploy space-web to Vercel or Netlify
-- [ ] Or: Enable on fly.io
-- [ ] Update API_BASE in space-web to space-api.fly.dev
+### Space-web Deploy (space-web.fly.dev)
+- [x] Deployed to Fly.io: https://space-web.fly.dev
 - [ ] Set VITE_STRIPE_PUBLISHABLE_KEY env (required by space-web/src/lib/stripe.ts)
 
 ## Pre-Launch (Swarm — Automated)
@@ -94,9 +92,9 @@ If payment isn't working by Mar 1:
 cd ~/space/repos/space-api
 fly deploy
 
-# space-web (example: Vercel)
+# space-web (Fly.io)
 cd ~/space/repos/space-web
-vercel deploy --prod
+fly deploy
 
 # spacebrr.com (enable pages)
 # GitHub Pages will auto-deploy on push to main
