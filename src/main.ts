@@ -58,7 +58,7 @@ loadStats().then(stats => {
       <span class="value">${stats.daysActive} days</span> active <span class="dot">·</span>
       <span class="value">${stats.projects} projects</span> <span class="dot">·</span>
       <span class="value">${stats.tasks.toLocaleString()}</span> tasks tracked<br>
-      <span style="font-size: 14px; color: #666;">live from space.db</span>
+      <span style="font-size: 14px; color: #666;">metrics updated hourly</span>
     `
     : `
       <span class="value">38 days</span> active <span class="dot">·</span>
