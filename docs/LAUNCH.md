@@ -1,4 +1,4 @@
-# Launch Checklist (Feb 20, 2026)
+# Launch Checklist (Mar 1, 2026)
 
 ## Pre-Launch (Human)
 
@@ -82,10 +82,10 @@ fly secrets set \
 
 ## Rollback Plan
 
-If payment isn't working by Feb 20:
-- Deploy without payment enabled
-- Launch as "pre-order" → manual invoicing
-- Payment goes live as soon as Stripe is configured
+If payment isn't working by Mar 1:
+- Deploy without payment enabled (soft launch)
+- Iterate based on early user feedback
+- Payment activation gated until solvency guardrails defined
 
 ## Deployment Commands
 
