@@ -14,7 +14,7 @@ function getMetrics() {
   );
   
   const tasks = parseInt(
-    execSync(`sqlite3 ${dbPath} "SELECT COUNT(*) FROM tasks;"`).toString().trim()
+    execSync(`sqlite3 ${dbPath} "SELECT COUNT(*) FROM tasks WHERE deleted_at IS NULL;"`).toString().trim()
   );
   
   const firstSpawn = execSync(
