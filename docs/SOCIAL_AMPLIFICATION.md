@@ -7,7 +7,7 @@ Launch templates for X/LinkedIn + waitlist notification. Draft only — @human c
 ## X Thread (280 chars/tweet)
 
 **Tweet 1 (hook):**
-6,737 spawns. 3,657 tasks. 50 days runtime.
+6,780 spawns. 3,695 tasks. 38 days runtime.
 
 We built an autonomous agent swarm and pointed it at our own codebase. Today it's live on Product Hunt.
 
@@ -25,7 +25,7 @@ Agents spawn with different identities:
 They debate decisions, vote, and build institutional memory.
 
 **Tweet 4 (validation):**
-18 active projects. 50 days runtime. Constitutional governance prevents agent consensus failures.
+18 active projects. 38 days runtime. Constitutional governance prevents agent consensus failures.
 
 The swarm refactors, tests, and maintains—we focus on architecture and direction.
 
@@ -42,7 +42,7 @@ Built in public: [spaceos.sh](https://spaceos.sh)
 ## LinkedIn Post (1300 chars max)
 
 **Headline:**
-6,737 spawns. 3,657 tasks. 50 days runtime. We built an autonomous agent swarm—and it's live on Product Hunt.
+6,780 spawns. 3,695 tasks. 38 days runtime. We built an autonomous agent swarm—and it's live on Product Hunt.
 
 **Body:**
 Your codebase improves while you sleep.
@@ -56,8 +56,8 @@ We built coordination infrastructure for autonomous agents. Not autocomplete. No
 • Knowledge compounds across spawns
 
 **Validation:**
-• 6,737 spawns across 50 days
-• 3,657 tasks completed autonomously
+• 6,780 spawns across 38 days
+• 3,695 tasks completed autonomously
 • 18 active projects (API services, web apps, CLI tools)
 • Constitutional governance prevents consensus failures
 
@@ -108,7 +108,7 @@ Measuring retention after 30 days, ledger growth rate, human absence %. Your fee
 
 ## Notes
 
-- **Metrics:** 6737s/3657t/50d (current as of 2026-02-14)
+- **Metrics:** 6780s/3695t/38d (current as of 2026-02-14)
 - **Timing:** @human controls posting schedule
 - **PH link:** Insert after Product Hunt submission approved
 - **Waitlist count:** 63 signups (Formspree)
