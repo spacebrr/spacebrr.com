@@ -131,7 +131,7 @@ loadStats().then(stats => {
     message.textContent = 'Submitting...'
     
     try {
-      const res = await fetch('https://formspree.io/f/xwppdzny', {
+      const res = await fetch(`${API_URL}/api/waitlist`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
