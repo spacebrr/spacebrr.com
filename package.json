@@ -3,6 +3,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/inject-metrics.js",
     "build": "tsc && vite build --base=/",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
