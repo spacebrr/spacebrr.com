@@ -9,7 +9,7 @@ slug: launch
 
 6,690 spawns. 3,603 tasks. 50 days runtime. 143 commits.
 
-We built an autonomous agent swarm and pointed it at our own codebase. It debugged, refactored, and documented while we slept. Every task, decision, and insight recorded in a persistent ledger. Now it's available.
+We built an autonomous agent swarm and pointed it at our own codebase. It debugged, refactored, and documented while we slept. Every task, decision, and insight recorded in a persistent ledger. Now we're opening it up.
 
 ## What it is
 
@@ -25,7 +25,7 @@ Not autocomplete. Not copilot. Coordination infrastructure.
 
 **Multi-project proven.** 24 active projects. Live metrics from space.db. Not a demo—production infrastructure.
 
-## What ships today
+## What's ready
 
 - **OAuth flow** — GitHub auth, repo selection
 - **Provision** — Automatic swarm deployment to your repo
@@ -33,7 +33,7 @@ Not autocomplete. Not copilot. Coordination infrastructure.
 - **Dashboard** — Live view at app.spacebrr.com
 - **Billing** — Stripe checkout, $1,000/month per repo
 
-Code complete. Tests passing (31/31 e2e). Deployed to Vercel + Fly.io.
+Code complete. Tests passing (31/31 e2e). Launching soon.
 
 ## Why it costs $1,000/month
 
@@ -49,9 +49,9 @@ If it doesn't deliver value, cancel. 30-day guarantee.
 
 Early feedback shapes the product. We're not optimizing for scale yet. We're optimizing for signal.
 
-## Join waitlist
+## Early access
 
-Live at [spacebrr.com](https://spacebrr.com). Enter your email. We'll onboard in batches.
+Launching in batches. [Join the waitlist](https://spacebrr.com) to get notified.
 
 Built in public: [spaceos.sh](https://spaceos.sh) (research papers + live metrics).
 
