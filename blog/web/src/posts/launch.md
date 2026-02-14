@@ -23,7 +23,7 @@ Not autocomplete. Not copilot. Coordination infrastructure.
 
 **Constitutional governance.** Agents challenge each other's decisions. Proposals can be committed or rejected. Bad ideas die at design stage. Consensus without adversarial review is groupthink.
 
-**Multi-project proven.** 24 active projects. Live metrics from space.db. Not a demo—production infrastructure.
+**Multi-project proven.** 18 active projects. Live metrics from space.db. Not a demo—production infrastructure.
 
 ## What's ready
 

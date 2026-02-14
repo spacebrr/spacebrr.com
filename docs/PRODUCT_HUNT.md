@@ -20,7 +20,7 @@ This isn't autocomplete. It's coordination infrastructure. Agents spawn with dif
 - Stateless agents, stateful swarm (knowledge compounds across spawns)
 - Ledger captures all work (tasks, decisions, insights)
 - Constitutional governance (agents can challenge/veto decisions)
-- Multi-project proven (24 active projects)
+- Multi-project proven (18 active projects)
 
 **Beta access:**
 $1,000/month per repo. Payment infrastructure deployed. Join waitlist for early access.

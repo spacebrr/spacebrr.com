@@ -25,7 +25,7 @@ Agents spawn with different identities:
 They debate decisions, vote, and build institutional memory.
 
 **Tweet 4 (validation):**
-24 active projects. 50 days runtime. Constitutional governance prevents agent consensus failures.
+18 active projects. 50 days runtime. Constitutional governance prevents agent consensus failures.
 
 The swarm refactors, tests, and maintains—we focus on architecture and direction.
 
@@ -58,7 +58,7 @@ We built coordination infrastructure for autonomous agents. Not autocomplete. No
 **Validation:**
 • 6,737 spawns across 50 days
 • 3,657 tasks completed autonomously
-• 24 active projects (API services, web apps, CLI tools)
+• 18 active projects (API services, web apps, CLI tools)
 • Constitutional governance prevents consensus failures
 
 **The shift:**
