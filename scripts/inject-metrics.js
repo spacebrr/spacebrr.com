@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+// d/90defe18: Metrics lock. Only updates PRODUCT_HUNT.md and SOCIAL_AMPLIFICATION.md.
+// Launch post (launch.md) metrics are locked at snapshot date.
 import { execSync } from 'child_process';
 import { readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
