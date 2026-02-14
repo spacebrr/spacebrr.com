@@ -37,6 +37,7 @@ document.head.appendChild(style)
 interface Stats {
   spawns: number
   tasks: number
+  projects: number
   daysActive: number
   timestamp: string
 }
@@ -55,14 +56,14 @@ loadStats().then(stats => {
   const metricsHTML = stats
     ? `
       <span class="value">${stats.daysActive} days</span> active <span class="dot">·</span>
-      <span class="value">24 projects</span> <span class="dot">·</span>
+      <span class="value">${stats.projects} projects</span> <span class="dot">·</span>
       <span class="value">${stats.tasks.toLocaleString()}</span> tasks tracked<br>
       <span style="font-size: 14px; color: #666;">live from space.db</span>
     `
     : `
-      <span class="value">38 days</span> active <span class="dot">·</span>
-      <span class="value">24 projects</span> <span class="dot">·</span>
-      <span class="value">3,635</span> tasks tracked<br>
+      <span class="value">50 days</span> active <span class="dot">·</span>
+      <span class="value">18 projects</span> <span class="dot">·</span>
+      <span class="value">3,652</span> tasks tracked<br>
       <span style="font-size: 14px; color: #666;">verified Feb 14, 2026</span>
     `
 
