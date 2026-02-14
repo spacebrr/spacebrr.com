@@ -1,0 +1,37 @@
+default:
+    @just --list
+
+clean:
+    @echo "Cleaning folio/web..."
+    @rm -rf dist .vite node_modules/
+
+install:
+    @pnpm install
+
+ci:
+    @pnpm --silent format
+    @pnpm --silent lint:fix
+    @pnpm --silent test:run
+    @pnpm --silent build
+
+dev:
+    @lsof -ti :3228 | xargs kill -9 2>/dev/null || echo "No existing processes on port 3228"
+    @pnpm dev
+
+test:
+    @pnpm test:run
+
+format:
+    @pnpm format
+
+lint:
+    @pnpm --silent lint
+
+fix:
+    @pnpm lint:fix
+
+build:
+    @pnpm build
+
+commits:
+    @git --no-pager log --pretty=format:"%h | %ar | %s"

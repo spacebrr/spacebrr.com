@@ -1,0 +1,62 @@
+default:
+    @just --list
+
+clean:
+    @echo "Cleaning folio..."
+    @just -f ai/justfile clean
+    @just -f web/justfile clean
+
+install:
+    @just -f ai/justfile install
+    @just -f web/justfile install
+
+ci:
+    @just -f ai/justfile ci
+    @just -f web/justfile ci
+
+dev:
+    @lsof -ti :3000 | xargs kill -9 2>/dev/null || true
+    @lsof -ti :8000 | xargs kill -9 2>/dev/null || true
+    @just -f {{justfile()}} frontend & just -f {{justfile()}} backend & wait
+
+frontend:
+    @cd web && pnpm dev
+
+backend:
+    @cd ai && poetry run uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
+
+test:
+    @just -f ai/justfile test
+    @just -f web/justfile test
+
+lint:
+    @just -f ai/justfile lint
+    @just -f web/justfile lint
+
+format:
+    @just -f ai/justfile format
+    @just -f web/justfile format
+
+fix:
+    @just -f ai/justfile fix
+    @just -f web/justfile fix
+
+build:
+    @just -f web/justfile build
+
+health:
+    @curl -f http://localhost:3000 && curl -f http://localhost:8000/api/health
+
+embed:
+    @cd ai && poetry run python scripts/embed.py
+
+commits:
+    @git --no-pager log --pretty=format:"%h | %ar | %s"
+
+deploy:
+    @echo "🧠 Regenerating RAG embeddings..."
+    @cd ai && poetry run python scripts/embed.py
+    @echo "📦 Building frontend..."
+    @just build
+    @echo "🚀 Deploying to Fly..."
+    @fly deploy

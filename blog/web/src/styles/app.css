@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: 253 252 251;
+    --text: 32 32 32;
+    --text-muted: 120 120 120;
+    --border: 235 235 235;
+    --accent: 32 32 32;
+    --progress: 32 32 32;
+  }
+
+  .dark {
+    --bg: 16 16 16;
+    --text: 232 232 232;
+    --text-muted: 145 145 145;
+    --border: 40 40 40;
+    --accent: 232 232 232;
+    --progress: 232 232 232;
+  }
+
+  html {
+    font-family: 'Charter', 'Georgia', 'Times New Roman', serif;
+    scroll-behavior: smooth;
+    font-size: 18px;
+  }
+
+  @media (min-width: 768px) {
+    html { font-size: 20px; }
+  }
+
+  body {
+    background-color: rgb(var(--bg));
+    color: rgb(var(--text));
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.75;
+  }
+
+  h1, h2, h3 {
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+    color: rgb(var(--text));
+  }
+
+  h1 { font-size: 1.875rem; margin-bottom: 1rem; }
+  h2 { font-size: 1.375rem; margin-top: 2.5rem; margin-bottom: 0.75rem; }
+  h3 { font-size: 1.125rem; margin-top: 2rem; margin-bottom: 0.5rem; }
+
+  p, li {
+    margin-bottom: 1.25rem;
+    color: rgb(var(--text));
+  }
+
+  a {
+    color: rgb(var(--text));
+    text-decoration-line: underline;
+    text-decoration-color: rgb(var(--text-muted));
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    transition: text-decoration-color 150ms;
+  }
+
+  a:hover {
+    text-decoration-color: rgb(var(--text));
+  }
+
+  code {
+    font-family: 'SF Mono', 'Menlo', 'Monaco', monospace;
+    font-size: 0.85em;
+    background: rgb(var(--border));
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+  }
+
+  pre {
+    background: rgb(var(--border) / 0.5);
+    border-radius: 6px;
+    padding: 1.25rem;
+    overflow-x: auto;
+    margin: 1.75rem 0;
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  pre code {
+    background: transparent;
+    padding: 0;
+  }
+
+  blockquote {
+    border-left: 2px solid rgb(var(--text-muted));
+    padding-left: 1.25rem;
+    margin: 1.75rem 0;
+    font-style: italic;
+    color: rgb(var(--text-muted));
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid rgb(var(--border));
+    margin: 3rem 0;
+  }
+
+  ::selection {
+    background: rgb(var(--text) / 0.12);
+  }
+
+  .prose {
+    max-width: none;
+  }
+
+  .prose p, .prose li {
+    color: rgb(var(--text));
+  }
+
+  .prose strong {
+    font-weight: 600;
+    color: rgb(var(--text));
+  }
+
+  .prose em {
+    color: rgb(var(--text));
+  }
+
+  .prose h2, .prose h3 {
+    color: rgb(var(--text));
+  }
+
+  .prose a {
+    color: rgb(var(--text));
+  }
+
+  .prose blockquote p {
+    color: rgb(var(--text-muted));
+  }
+
+  .prose ul, .prose ol {
+    padding-left: 1.25rem;
+  }
+
+  .prose li {
+    margin-bottom: 0.5rem;
+  }
+}
