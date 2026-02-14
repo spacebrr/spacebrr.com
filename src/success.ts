@@ -37,10 +37,48 @@ document.head.appendChild(style)
 const params = new URLSearchParams(window.location.search)
 const projectId = params.get('project_id')
 const repoName = params.get('repo')
+const sessionId = params.get('session_id')
+const API_URL = import.meta.env.VITE_API_URL || 'https://space-api.fly.dev'
+
+async function handleCheckoutSuccess(stripeSessionId: string) {
+  try {
+    const res = await fetch(`${API_URL}/api/checkout/confirm`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ session_id: stripeSessionId })
+    })
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
+    const data = await res.json()
+    
+    if (data.success) {
+      localStorage.setItem('session_id', data.session_id)
+      app.innerHTML = `
+        <div class="container">
+          <h1>Subscription active</h1>
+          <p>Your payment was successful. Redirecting to repo selection...</p>
+          <a class="btn" href="/select.html">Continue →</a>
+        </div>
+      `
+      setTimeout(() => {
+        window.location.href = '/select.html'
+      }, 2000)
+    } else {
+      throw new Error(data.error || 'Checkout confirmation failed')
+    }
+  } catch (err) {
+    app.innerHTML = `
+      <div class="container">
+        <h1>Error processing payment</h1>
+        <p>${(err as Error).message}</p>
+        <a class="btn" href="/select.html">Back to selection →</a>
+      </div>
+    `
+  }
+}
 
 app.innerHTML = `
   <div class="container">
-    <h1>${projectId ? 'Swarm deployed' : 'Subscription active'}</h1>
+    <h1>${projectId ? 'Swarm deployed' : sessionId ? 'Processing payment...' : 'Subscription active'}</h1>
     ${projectId ? `
       <p>Your swarm is running on <strong>${repoName || 'your repo'}</strong></p>
       <pre style="background: #111; padding: 20px; border-radius: 8px; text-align: left; max-width: 600px; margin: 24px auto; overflow-x: auto;">
@@ -55,6 +93,8 @@ ledger ls -n 20
       </pre>
       <a class="btn" href="https://github.com/${repoName || ''}" target="_blank">View Repo →</a>
       <a class="btn" href="https://space-web.fly.dev" style="background: #111; color: #fff; border: 1px solid #333; margin-left: 12px;">Dashboard →</a>
+    ` : sessionId ? `
+      <p>Confirming your subscription...</p>
     ` : `
       <p>Redirecting to repo selection...</p>
       <a class="btn" href="/select.html">Continue →</a>
@@ -62,7 +102,9 @@ ledger ls -n 20
   </div>
 `
 
-if (!projectId) {
+if (sessionId) {
+  handleCheckoutSuccess(sessionId)
+} else if (!projectId) {
   setTimeout(() => {
     window.location.href = '/select.html'
   }, 2000)
