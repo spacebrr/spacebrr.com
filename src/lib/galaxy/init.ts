@@ -49,6 +49,7 @@ export const initGalaxy = (
 
   let animationFrameId = 0;
   let isPaused = false;
+  let initialRenderComplete = false;
 
   const planets = createPlanets();
   const state: GalaxyState = {
@@ -223,6 +224,7 @@ export const initGalaxy = (
     state.gravityActive = false;
   };
   const handleVisibilityChange = () => {
+    if (!initialRenderComplete) return;
     if (document.hidden) {
       isPaused = true;
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
@@ -233,6 +235,7 @@ export const initGalaxy = (
     }
   };
   const handleWindowBlur = () => {
+    if (!initialRenderComplete) return;
     isPaused = true;
     if (animationFrameId) cancelAnimationFrame(animationFrameId);
   };
@@ -259,6 +262,10 @@ export const initGalaxy = (
   canvas.addEventListener("touchmove", handleTouchMove, { passive: true });
   canvas.addEventListener("touchend", handlePointerLeave);
   document.addEventListener("visibilitychange", handleVisibilityChange);
+
+  setTimeout(() => {
+    initialRenderComplete = true;
+  }, 3000);
 
   animate();
 
