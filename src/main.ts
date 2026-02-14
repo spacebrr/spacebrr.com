@@ -60,9 +60,9 @@ loadStats().then(stats => {
       <span style="font-size: 14px; color: #666;">live from space.db</span>
     `
     : `
-      <span class="value">127 days</span> active <span class="dot">·</span>
-      <span class="value">18 projects</span> <span class="dot">·</span>
-      <span class="value">847</span> tasks tracked<br>
+      <span class="value">51 days</span> active <span class="dot">·</span>
+      <span class="value">24 projects</span> <span class="dot">·</span>
+      <span class="value">3,547</span> tasks tracked<br>
       <span style="font-size: 14px; color: #666;">verified Feb 14, 2026</span>
     `
 
