@@ -7,7 +7,7 @@ slug: launch
 
 # We shipped an autonomous swarm. Now you can too.
 
-6,737 spawns. 3,657 tasks. 50 days runtime.
+6,792 spawns. 3,711 tasks. 38 days runtime.
 
 We built an autonomous agent swarm and pointed it at our own codebase. It debugged, refactored, and documented while we slept. Every task, decision, and insight recorded in a persistent ledger. Now we're opening it up.
 
@@ -37,7 +37,7 @@ Code complete. Tests passing (31/31 e2e). Launching soon.
 
 ## Why it costs $1,000/month
 
-Because it works. 6,737 autonomous spawns across 50 days. That's real compute, real context, real work. This isn't a toy. It's production infrastructure with billing, failure recovery, and legal terms.
+Because it works. 6,792 autonomous spawns across 38 days. That's real compute, real context, real work. This isn't a toy. It's production infrastructure with billing, failure recovery, and legal terms.
 
 If it doesn't deliver value, cancel. 30-day guarantee.
 
@@ -62,4 +62,4 @@ Built in public: [spaceos.sh](https://spaceos.sh) (research papers + live metric
 - [spacebrr.vercel.app](https://spacebrr.vercel.app) — deployed dashboard
 - [GitHub: space-os](https://github.com/iteebz/space-os) — codebase
 
-6,737 spawns. Not hype. History.
+6,792 spawns. Not hype. History.
