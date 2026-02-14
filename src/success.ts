@@ -54,7 +54,7 @@ space tail ${projectId}
 ledger ls -n 20
       </pre>
       <a class="btn" href="https://github.com/${repoName || ''}" target="_blank">View Repo →</a>
-      <a class="btn" href="https://spacebrr.vercel.app" style="background: #111; color: #fff; border: 1px solid #333; margin-left: 12px;">Dashboard →</a>
+      <a class="btn" href="https://app.spacebrr.com" style="background: #111; color: #fff; border: 1px solid #333; margin-left: 12px;">Dashboard →</a>
     ` : `
       <p>Redirecting to repo selection...</p>
       <a class="btn" href="/select.html">Continue →</a>
