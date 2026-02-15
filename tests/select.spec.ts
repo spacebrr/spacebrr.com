@@ -28,7 +28,7 @@ test.describe('Select Page', () => {
     await page.route('**/api/subscription', route => {
       route.fulfill({
         status: 200,
-        body: JSON.stringify({ status: 'active' }),
+        body: JSON.stringify({ active: true }),
       })
     })
     await page.route('**/api/repos', route => {
@@ -75,7 +75,7 @@ test.describe('Select Page', () => {
     await page.route('**/api/subscription', route => {
       route.fulfill({
         status: 200,
-        body: JSON.stringify({ status: 'active' }),
+        body: JSON.stringify({ active: true }),
       })
     })
     
