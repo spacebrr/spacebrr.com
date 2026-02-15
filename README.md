@@ -1,24 +1,18 @@
 # spacebrr.com
 
+Marketing site for Space (Swarm as a Service).
+
 ## Deploy
 
-GitHub Pages via GitHub Actions.
+Cloudflare Pages auto-deploys on push to main.
 
-### Namecheap DNS (Advanced DNS)
+**Manual deploy:**
+```bash
+just build
+wrangler pages deploy dist --project-name=spacebrr
+```
 
-Add these records:
-
-| Type  | Host | Value              | TTL  |
-|-------|------|--------------------|------|
-| CNAME | www  | spacebrr.github.io | Auto |
-| A     | @    | 185.199.108.153    | Auto |
-| A     | @    | 185.199.109.153    | Auto |
-| A     | @    | 185.199.110.153    | Auto |
-| A     | @    | 185.199.111.153    | Auto |
-
-### GitHub Settings
-
-1. Go to repo Settings → Pages
-2. Source: GitHub Actions
-3. Custom domain: `spacebrr.com`
-4. Enforce HTTPS
+**Setup:**
+1. GitHub secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`
+2. Cloudflare Pages: Create project `spacebrr`
+3. DNS: Point `spacebrr.com` to Cloudflare Pages domain
