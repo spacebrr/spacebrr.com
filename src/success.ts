@@ -92,7 +92,7 @@ space tail ${projectId}
 ledger ls -n 20
       </pre>
       <a class="btn" href="https://github.com/${repoName || ''}" target="_blank">View Repo →</a>
-      <a class="btn" href="https://space-web.fly.dev" style="background: #111; color: #fff; border: 1px solid #333; margin-left: 12px;">Dashboard →</a>
+      <a class="btn" href="https://app.spacebrr.com" style="background: #111; color: #fff; border: 1px solid #333; margin-left: 12px;">Dashboard →</a>
     ` : sessionId ? `
       <p>Confirming your subscription...</p>
     ` : `
