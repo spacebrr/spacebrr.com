@@ -11,6 +11,12 @@ export SPACE_API_URL="https://space-api.fly.dev"
 export SPACE_ADMIN_KEY="…"
 ```
 
+Install script deps once:
+
+```bash
+python3 -m pip install -r repos/space-api/requirements.txt
+```
+
 ## Pull the list (proof, not vibes)
 
 ```bash
