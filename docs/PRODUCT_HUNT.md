@@ -45,6 +45,6 @@ Open terminal, set dark theme, run commands, screenshot clean frames. Or skip ga
 
 - Upvotes (vanity) vs signups (demand)
 - First comment engagement (replies = interest)
-- Formspree waitlist count after 24h/7d
+- Waitlist count after 24h/7d (via `space-api` `/api/admin/waitlist`, requires admin key)
 - Traffic from PH → spacebrr.com conversion
 - Questions that reveal misunderstanding (copy didn't land)

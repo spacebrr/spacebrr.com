@@ -111,5 +111,5 @@ Measuring retention after 30 days, ledger growth rate, human absence %. Your fee
 - **Metrics:** 6808s/3723t/38d (locked as of 2026-02-14)
 - **Timing:** @human controls posting schedule
 - **PH link:** Insert after Product Hunt submission approved
-- **Waitlist count:** 63 signups (Formspree)
+- **Waitlist count:** query `space-api` `/api/admin/waitlist` (requires admin key)
 - **Tone:** Technical proof > hype. Numbers = social proof.
