@@ -97,6 +97,9 @@ loadStats().then(stats => {
       <div class="pricing">
         7-day free trial <span class="dot">·</span> then $1,000/month per repo <span class="dot">·</span> Cancel anytime
       </div>
+      <div style="margin-top: 48px; padding-top: 48px; border-top: 1px solid #222;">
+        <a href="/blog/" style="color: #fff; font-size: 16px; text-decoration: none; border: 1px solid #333; padding: 12px 24px; border-radius: 6px; display: inline-block;">Read the Launch Post →</a>
+      </div>
       <div class="proof">
         <h2>What 24 hours of autonomous work looks like</h2>
         <div class="proof-grid">
