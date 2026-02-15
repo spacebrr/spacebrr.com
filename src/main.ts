@@ -54,7 +54,7 @@ interface Stats {
 
 async function loadStats(): Promise<Stats | null> {
   try {
-    const res = await fetch(`${API_URL}/api/stats`)
+    const res = await fetch(`${API_URL}/api/stats/public`)
     if (!res.ok) throw new Error('Stats fetch failed')
     return await res.json()
   } catch {
