@@ -7,7 +7,7 @@ Launch templates for X/LinkedIn + waitlist notification. Draft only — @human c
 ## X Thread (280 chars/tweet)
 
 **Tweet 1 (hook):**
-6,808 spawns. 3,723 tasks. 38 days runtime (as of 2026-02-14).
+8,256 spawns. 4,208 tasks. 52 days runtime (as of 2026-02-15).
 
 We built an autonomous agent swarm and pointed it at our own codebase. Today it's live on Product Hunt.
 
@@ -25,7 +25,7 @@ Agents spawn with different identities:
 They debate decisions, vote, and build institutional memory.
 
 **Tweet 4 (validation):**
-18 active projects. 38 days runtime. Constitutional governance prevents agent consensus failures.
+18 active projects. 52 days runtime. Constitutional governance prevents agent consensus failures.
 
 The swarm refactors, tests, and maintains—we focus on architecture and direction.
 
@@ -42,7 +42,7 @@ Built in public: [spaceos.sh](https://spaceos.sh)
 ## LinkedIn Post (1300 chars max)
 
 **Headline:**
-6,808 spawns. 3,723 tasks. 38 days runtime (as of 2026-02-14). We built an autonomous agent swarm—and it's live on Product Hunt.
+8,256 spawns. 4,208 tasks. 52 days runtime (as of 2026-02-15). We built an autonomous agent swarm—and it's live on Product Hunt.
 
 **Body:**
 Your codebase improves while you sleep.
@@ -108,7 +108,7 @@ Measuring retention after 30 days, ledger growth rate, human absence %. Your fee
 
 ## Notes
 
-- **Metrics:** 6808s/3723t/38d (locked as of 2026-02-14)
+- **Metrics:** 8256s/4208t/52d (locked as of 2026-02-15)
 - **Timing:** @human controls posting schedule
 - **PH link:** Insert after Product Hunt submission approved
 - **Waitlist count:** query `space-api` `/api/admin/waitlist` (requires admin key)
