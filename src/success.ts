@@ -55,12 +55,12 @@ async function handleCheckoutSuccess(stripeSessionId: string) {
       app.innerHTML = `
         <div class="container">
           <h1>Subscription active</h1>
-          <p>Your payment was successful. Redirecting to repo selection...</p>
-          <a class="btn" href="/select.html">Continue →</a>
+          <p>Your payment was successful. Redirecting to dashboard...</p>
+          <a class="btn" href="https://app.spacebrr.com">Continue →</a>
         </div>
       `
       setTimeout(() => {
-        window.location.href = '/select.html'
+        window.location.href = 'https://app.spacebrr.com'
       }, 2000)
     } else {
       throw new Error(data.error || 'Checkout confirmation failed')
@@ -70,7 +70,7 @@ async function handleCheckoutSuccess(stripeSessionId: string) {
       <div class="container">
         <h1>Error processing payment</h1>
         <p>${(err as Error).message}</p>
-        <a class="btn" href="/select.html">Back to selection →</a>
+        <a class="btn" href="https://app.spacebrr.com">Back to dashboard →</a>
       </div>
     `
   }
@@ -96,8 +96,8 @@ ledger ls -n 20
     ` : sessionId ? `
       <p>Confirming your subscription...</p>
     ` : `
-      <p>Redirecting to repo selection...</p>
-      <a class="btn" href="/select.html">Continue →</a>
+      <p>Redirecting to dashboard...</p>
+      <a class="btn" href="https://app.spacebrr.com">Continue →</a>
     `}
   </div>
 `
@@ -106,6 +106,6 @@ if (sessionId) {
   handleCheckoutSuccess(sessionId)
 } else if (!projectId) {
   setTimeout(() => {
-    window.location.href = '/select.html'
+    window.location.href = 'https://app.spacebrr.com'
   }, 2000)
 }
