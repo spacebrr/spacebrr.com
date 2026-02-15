@@ -105,11 +105,10 @@ loadStats().then(stats => {
   const getStarted = document.getElementById('get-started')!
   getStarted.addEventListener('click', () => {
     track('cta_get_started')
-    window.location.href = `${API_URL}/auth/github`
+    window.location.href = 'https://app.spacebrr.com'
   })
 
   const params = new URLSearchParams(window.location.search)
-  const sessionId = params.get('session')
   const error = params.get('error')
   
   if (error) {
@@ -117,9 +116,6 @@ loadStats().then(stats => {
     if (message) {
       message.innerHTML = `<span style="color: #f44;">OAuth error: ${error}. Please try again.</span>`
     }
-  } else if (sessionId) {
-    localStorage.setItem('session_id', sessionId)
-    window.location.href = '/select.html'
   }
 
   form.addEventListener('submit', async (e) => {
