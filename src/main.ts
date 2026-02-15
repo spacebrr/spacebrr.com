@@ -95,7 +95,7 @@ loadStats().then(stats => {
       </div>
       <div id="form-message" style="margin-top: 12px; font-size: 14px;"></div>
       <div class="pricing">
-        $1,000/month per repo <span class="dot">·</span> 30-day money-back guarantee <span class="dot">·</span> Cancel anytime
+        7-day free trial <span class="dot">·</span> then $1,000/month per repo <span class="dot">·</span> Cancel anytime
       </div>
       <div class="proof">
         <h2>What 24 hours of autonomous work looks like</h2>
