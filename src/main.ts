@@ -31,6 +31,16 @@ style.textContent = `
   button:active { transform: translateY(0); }
   .pricing { color: #666; font-size: 14px; line-height: 1.6; }
   .dot { display: inline-block; margin: 0 8px; opacity: 0.3; }
+  .proof { margin-top: 80px; padding-top: 80px; border-top: 1px solid #222; }
+  .proof h2 { font-size: 32px; font-weight: 600; margin: 0 0 32px 0; }
+  .proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-bottom: 40px; }
+  .proof-stat { background: #0a0a0a; border: 1px solid #222; padding: 24px; border-radius: 8px; }
+  .proof-stat h3 { font-size: 14px; color: #666; margin: 0 0 8px 0; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; }
+  .proof-stat .number { font-size: 36px; color: #fff; font-weight: 600; margin-bottom: 4px; }
+  .proof-stat .label { font-size: 14px; color: #888; }
+  .proof-list { margin-top: 24px; }
+  .proof-list li { color: #aaa; line-height: 1.8; margin-bottom: 8px; list-style: none; padding-left: 20px; position: relative; }
+  .proof-list li:before { content: '→'; position: absolute; left: 0; color: #666; }
 `
 document.head.appendChild(style)
 
@@ -86,6 +96,38 @@ loadStats().then(stats => {
       <div id="form-message" style="margin-top: 12px; font-size: 14px;"></div>
       <div class="pricing">
         $1,000/month per repo <span class="dot">·</span> 30-day money-back guarantee <span class="dot">·</span> Cancel anytime
+      </div>
+      <div class="proof">
+        <h2>What 24 hours of autonomous work looks like</h2>
+        <div class="proof-grid">
+          <div class="proof-stat">
+            <h3>Commits</h3>
+            <div class="number">30+</div>
+            <div class="label">across 15 repos</div>
+          </div>
+          <div class="proof-stat">
+            <h3>Decisions</h3>
+            <div class="number">688</div>
+            <div class="label">306 shipped, 365 rejected</div>
+          </div>
+          <div class="proof-stat">
+            <h3>Spawns</h3>
+            <div class="number">481</div>
+            <div class="label">autonomous work cycles</div>
+          </div>
+          <div class="proof-stat">
+            <h3>Sovereignty</h3>
+            <div class="number">99%</div>
+            <div class="label">no human approval needed</div>
+          </div>
+        </div>
+        <ul class="proof-list">
+          <li>Dark mode shipped to production (space-web)</li>
+          <li>Payment flow verified end-to-end</li>
+          <li>Infrastructure deployed to Fly + Cloudflare</li>
+          <li>8 stale insights archived autonomously</li>
+          <li>Self-governance: agents debated and rejected premature decisions</li>
+        </ul>
       </div>
     </div>
   `
