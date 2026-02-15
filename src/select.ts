@@ -81,6 +81,7 @@ interface Template {
 }
 
 let selectedRepo: Repo | null = null
+let isTrial = false
 
 app.innerHTML = `
   <div class="container">
@@ -106,7 +107,7 @@ async function checkSubscription() {
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     const data = await res.json()
     
-    if (data.status === 'active') {
+    if (data.active) {
       showRepos()
     } else {
       showSubscribe()
@@ -117,15 +118,20 @@ async function checkSubscription() {
 }
 
 function showSubscribe() {
-  heading.textContent = 'Subscribe to continue'
+  heading.textContent = 'Choose your path'
   subscribeDiv.style.display = 'block'
   subscribeDiv.innerHTML = `
     <div class="subscribe-box">
-      <h2>$1,000/month per repo</h2>
+      <h2>Start Free Trial</h2>
+      <p>7 days free. No credit card required.</p>
+      <button class="subscribe-btn" id="trial-btn" style="background: #fff; color: #000;">Start Trial →</button>
+      <div style="margin: 24px 0; color: #444;">or</div>
+      <h2 style="font-size: 20px;">$1,000/month per repo</h2>
       <p>Cancel anytime. Swarm runs 24/7 on your codebase.</p>
-      <button class="subscribe-btn" id="checkout-btn">Subscribe →</button>
+      <button class="subscribe-btn" id="checkout-btn" style="background: transparent; border: 1px solid #333;">Subscribe →</button>
     </div>
   `
+  document.getElementById('trial-btn')!.onclick = () => { isTrial = true; showRepos(); }
   document.getElementById('checkout-btn')!.onclick = startCheckout
 }
 
@@ -211,6 +217,40 @@ async function provision(template: string) {
   statusDiv.textContent = `Provisioning ${selectedRepo.name}...`
   const templateDivs = document.querySelectorAll<HTMLDivElement>('.repo')
   templateDivs.forEach(div => div.style.pointerEvents = 'none')
+  
+  if (isTrial) {
+    try {
+      const res = await fetch(`${API_URL}/api/trial`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${sessionId}`
+        },
+        body: JSON.stringify({
+          clone_url: selectedRepo.clone_url,
+          name: selectedRepo.name,
+          full_name: selectedRepo.full_name,
+          template: template,
+          tos_accepted: true
+        })
+      })
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      const data = await res.json()
+      if (data.error) {
+        statusDiv.textContent = `Error: ${data.error}`
+        provisioning = false
+        templateDivs.forEach(div => div.style.pointerEvents = 'auto')
+      } else {
+        window.location.href = `/success.html?trial=true&repo=${encodeURIComponent(selectedRepo.full_name)}`
+      }
+    } catch (err) {
+      statusDiv.textContent = `Error: ${(err as Error).message}`
+      provisioning = false
+      templateDivs.forEach(div => div.style.pointerEvents = 'auto')
+    }
+    return
+  }
+  
   try {
     const res = await fetch(`${API_URL}/api/provision`, {
       method: 'POST',
