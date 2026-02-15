@@ -178,7 +178,8 @@ loadStats().then(stats => {
       
       if (res.ok) {
         message.style.color = '#4ade80'
-        message.textContent = 'Added to waitlist ✓'
+        message.innerHTML =
+          'Added to waitlist ✓ — <a id="trial-link" href="https://app.spacebrr.com" style="color: #fff; text-decoration: underline;">Start free trial</a>'
         form.reset()
       } else {
         message.style.color = '#f87171'
@@ -188,5 +189,10 @@ loadStats().then(stats => {
       message.style.color = '#f87171'
       message.textContent = 'Network error - try again'
     }
+  })
+
+  message.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement | null
+    if (target?.id === 'trial-link') track('waitlist_start_trial_click')
   })
 })
