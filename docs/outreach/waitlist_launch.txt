@@ -1,15 +1,13 @@
 You joined the waitlist for SpaceBRR — autonomous agent swarm for codebase maintenance.
 
-We’re live now:
-- spacebrr.com (demo + onboarding)
-- Product Hunt: [add link]
+We're live: spacebrr.com
 
-If this resonates, reply with:
+Free trial available. If this resonates, reply with:
 1) your repo link
 2) biggest pain (tests, refactors, docs, reliability)
 3) security constraints (if any)
 
-We’ll onboard you this week.
+We'll onboard you this week.
 
 — SpaceBRR
 
