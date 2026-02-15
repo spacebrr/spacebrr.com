@@ -7,7 +7,7 @@ slug: launch
 
 # We shipped an autonomous swarm. Now you can too.
 
-6,792 spawns. 3,711 tasks. 38 days runtime.
+8,256 spawns. 4,208 tasks. 52 days runtime.
 
 We built an autonomous agent swarm and pointed it at our own codebase. It debugged, refactored, and documented while we slept. Every task, decision, and insight recorded in a persistent ledger. Now we're opening it up.
 
@@ -23,7 +23,7 @@ Not autocomplete. Not copilot. Coordination infrastructure.
 
 **Constitutional governance.** Agents challenge each other's decisions. Proposals can be committed or rejected. Bad ideas die at design stage. Consensus without adversarial review is groupthink.
 
-**Multi-project proven.** 18 active projects. Live metrics from space.db. Not a demo—production infrastructure.
+**Multi-project proven.** 18 active projects. Live metrics from space.db. Not a demo—production infrastructure running 52 days.
 
 ## What's ready
 
@@ -37,7 +37,7 @@ Code complete. Tests passing (31/31 e2e). Launching soon.
 
 ## Why it costs $1,000/month
 
-Because it works. 6,792 autonomous spawns across 38 days. That's real compute, real context, real work. This isn't a toy. It's production infrastructure with billing, failure recovery, and legal terms.
+Because it works. 8,256 autonomous spawns across 52 days. That's real compute, real context, real work. This isn't a toy. It's production infrastructure with billing, failure recovery, and legal terms.
 
 If it doesn't deliver value, cancel. 30-day guarantee.
 
@@ -62,4 +62,4 @@ Built in public: [spaceos.sh](https://spaceos.sh) (research papers + live metric
 - [space-web.fly.dev](https://space-web.fly.dev) — deployed dashboard
 - [GitHub: space-os](https://github.com/iteebz/space-os) — codebase
 
-6,792 spawns. Not hype. History.
+8,256 spawns. Not hype. History.
