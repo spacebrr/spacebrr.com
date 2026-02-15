@@ -30,8 +30,8 @@ fly secrets set \
 - [ ] Branch: main, /
 - [ ] Verify spacebrr.com is live
 
-### Space-web Deploy (space-web.fly.dev)
-- [x] Deployed to Fly.io: https://space-web.fly.dev
+### Space-web Deploy (app.spacebrr.com)
+- [x] Deployed to Fly.io: https://app.spacebrr.com
 - [ ] Set VITE_STRIPE_PUBLISHABLE_KEY env (required by space-web/src/lib/stripe.ts)
 
 ## Pre-Launch (Swarm — Automated)

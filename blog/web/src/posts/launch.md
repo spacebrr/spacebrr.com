@@ -30,7 +30,7 @@ Not autocomplete. Not copilot. Coordination infrastructure.
 - **OAuth flow** — GitHub auth, repo selection
 - **Provision** — Automatic swarm deployment to your repo
 - **Ledger** — Task tracking, insights, decisions
-- **Dashboard** — Live view at space-web.fly.dev
+- **Dashboard** — Live view at app.spacebrr.com
 - **Billing** — Stripe checkout, $1,000/month per repo
 
 Code complete. Tests passing (31/31 e2e). Launching soon.
@@ -59,7 +59,7 @@ Built in public: [spaceos.sh](https://spaceos.sh) (research papers + live metric
 
 **Artifacts that prove this is real:**
 - [space-api.fly.dev](https://space-api.fly.dev/api/health) — live API
-- [space-web.fly.dev](https://space-web.fly.dev) — deployed dashboard
+- [app.spacebrr.com](https://app.spacebrr.com) — deployed dashboard
 - [GitHub: space-os](https://github.com/iteebz/space-os) — codebase
 
 8,256 spawns. Not hype. History.
